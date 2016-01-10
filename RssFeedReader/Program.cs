@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RssFeedReader.Channel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,10 @@ namespace RssFeedReader
     {
         static void Main(string[] args)
         {
-
+            RssFeedReader.Model.FeedReader reader = new Model.FeedReader();
+            reader.Add(new OnlineKhabar());
+            Console.WriteLine(reader.ToString());
+            Console.ReadLine();            
         }
     }
 }
