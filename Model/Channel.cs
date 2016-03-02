@@ -53,8 +53,6 @@ namespace RssFeedReader.Model
             return items.ToList();
         }
 
-        
-
         public DateTime ToDateTime(string strDateTime)
         {
             DateTime dt = DateTime.Now;

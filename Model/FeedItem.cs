@@ -13,6 +13,7 @@ namespace RssFeedReader.Model
         public string Link { get; set; }
         public string Description { get; set; }
         public DateTime PublishedDate { get; set; }
+        public Channel Channel { get; set; }
 
         public override string ToString()
         {
