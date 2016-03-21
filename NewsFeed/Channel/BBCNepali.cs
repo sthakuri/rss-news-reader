@@ -18,7 +18,7 @@ namespace NewsFeed.Channel
             FeedURL = "http://www.bbc.com/nepali/index.xml";
         }
 
-        public async override Task<List<FeedItem>> Fetch()
+        public virtual List<FeedItem> Fetch()
         {
             List<FeedItem> items = new List<FeedItem>();
             XmlDocument rssXmlDoc = new XmlDocument();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewsFeed.Extension;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace NewsFeed.Model
         {
             channels = new List<Channel>();
             items = new List<FeedItem>();
-            topItems=new List<FeedItem>();
+            topItems = new List<FeedItem>();
         }
 
         public void Add(Channel channel)
@@ -38,24 +39,9 @@ namespace NewsFeed.Model
             return items.OrderByDescending(x => x.PublishedDate).Take(5).ToList();
         }
 
-        //public List<FeedItem> Feeds()
-        //{
-        //    Parallel.ForEach(channels, c => { items.AddRange(c.Fetch()); });
-        //    return items.OrderByDescending(x => x.PublishedDate).ToList();
-        //}
-
-        public async Task<List<FeedItem>> Feeds()
+        public List<FeedItem> Feeds()
         {
-            //Parallel.ForEach(channels, c =>
-            //{
-            //    var data = c.Fetch();
-            //    items.AddRange(data.Result);
-            //});
-            foreach (var c in channels)
-            {
-                var data = await c.Fetch();
-                items.AddRange(data);
-            }
+            Parallel.ForEach(channels, c => { if (ePailaExt.IsURLActive(c.FeedURL)) items.AddRange(c.Fetch()); });
             return items.OrderByDescending(x => x.PublishedDate).ToList();
         }
 

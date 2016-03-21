@@ -13,6 +13,6 @@ namespace NewsFeed.Interface
         string WebURL { get; set; }
         string FeedURL { get; set; }
 
-        Task<List<FeedItem>> Fetch();
+        List<FeedItem> Fetch();
     }
 }

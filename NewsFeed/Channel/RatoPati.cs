@@ -20,7 +20,7 @@ namespace NewsFeed.Channel
             FeedURL = "http://www.ratopati.com/newsfeed/";
         }
 
-        public async override Task<List<FeedItem>> Fetch()
+        public virtual List<FeedItem> Fetch()
         {
             List<FeedItem> items = new List<FeedItem>();
             XmlDocument rssXmlDoc = new XmlDocument();

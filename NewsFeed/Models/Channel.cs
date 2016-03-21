@@ -20,7 +20,7 @@ namespace NewsFeed.Model
             return rssSubNode != null ? rssSubNode.InnerText : "";
         }
 
-        public async virtual Task<List<FeedItem>> Fetch()
+        public virtual List<FeedItem> Fetch()
         {
             var items = new List<FeedItem>();
             XmlDocument rssXmlDoc = new XmlDocument();
@@ -34,6 +34,7 @@ namespace NewsFeed.Model
                 {
                 }
                 // Parse the Items in the RSS file
+
                 XmlNodeList rssNodes = rssXmlDoc.SelectNodes("rss/channel/item");
 
                 // Iterate through the items in the RSS file
@@ -43,8 +44,8 @@ namespace NewsFeed.Model
                     string link = ReadNodeElement(rssNode, "link");
                     string description = ReadNodeElement(rssNode, "description");
                     DateTime pubDate = DateTimeExt.ToDateTime(ReadNodeElement(rssNode, "pubDate"));
-
-                    items.Add(new FeedItem() {Channel  = this, HeadLine = title, Description = description, Link = link, PublishedDate = pubDate });
+                    if (pubDate > DateTime.Now.AddDays(-1))
+                        items.Add(new FeedItem() { Channel = this, HeadLine = title, Description = description, Link = link, PublishedDate = pubDate });
                 }
             }
             catch (Exception ex)
@@ -53,6 +54,6 @@ namespace NewsFeed.Model
             return items.ToList();
         }
 
-        
+
     }
 }

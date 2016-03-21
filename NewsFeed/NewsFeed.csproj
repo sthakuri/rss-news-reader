@@ -77,6 +77,7 @@
     <Compile Include="Channel\UjyaloOnline.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Extension\DateTimeExt.cs" />
+    <Compile Include="Extension\ePailaExt.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -18,7 +18,7 @@ namespace NewsFeed.Channel
             FeedURL = "http://www.bizmandu.com/feed/news";
         }
 
-        public async override Task<List<FeedItem>> Fetch()
+        public virtual List<FeedItem> Fetch()
         {
             var items = new List<FeedItem>();
             XmlDocument rssXmlDoc = new XmlDocument();
