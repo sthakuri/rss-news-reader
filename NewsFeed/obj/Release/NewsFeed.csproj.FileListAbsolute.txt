@@ -1,0 +1,13 @@
+C:\CodeFun\NewsFeed\bin\NewsFeed.dll
+C:\CodeFun\NewsFeed\bin\NewsFeed.pdb
+C:\CodeFun\NewsFeed\bin\EntityFramework.dll
+C:\CodeFun\NewsFeed\bin\System.Web.Mvc.dll
+C:\CodeFun\NewsFeed\bin\System.Web.WebPages.dll
+C:\CodeFun\NewsFeed\bin\System.Web.WebPages.Razor.dll
+C:\CodeFun\NewsFeed\bin\EntityFramework.xml
+C:\CodeFun\NewsFeed\bin\System.Web.Mvc.xml
+C:\CodeFun\NewsFeed\bin\System.Web.WebPages.xml
+C:\CodeFun\NewsFeed\bin\System.Web.WebPages.Razor.xml
+C:\CodeFun\NewsFeed\obj\Release\NewsFeed.dll
+C:\CodeFun\NewsFeed\obj\Release\NewsFeed.pdb
+C:\CodeFun\NewsFeed\obj\Release\NewsFeed.csprojResolveAssemblyReference.cache

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsFeed", "..\NewsFeed\NewsFeed.csproj", "{A770DC55-876F-4CCC-AA07-4FAFA3EDE40F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsFeed", "NewsFeed\NewsFeed.csproj", "{A770DC55-876F-4CCC-AA07-4FAFA3EDE40F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

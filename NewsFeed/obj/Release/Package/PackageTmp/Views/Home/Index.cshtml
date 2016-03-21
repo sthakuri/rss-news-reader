@@ -1,0 +1,23 @@
+﻿@using NewsFeed.Extension
+@model NewsFeed.Model.ViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@foreach(var item in Model.Feeds())
+{
+    <div class="item">
+        <a href="@item.Link" target="_blank"><h2>@item.HeadLine</h2></a>
+        <a href="@item.Channel.WebURL" target="_blank">@item.Channel.Name</a> | @DateTimeExt.ToLovelyTime(item.PublishedDate)
+    </div>  
+}
+<hr/>
+Top Stories
+<hr/>
+@foreach(var item in Model.TopFeeds())
+{
+    <div class="item">
+        <a href="@item.Link" target="_blank"><h2>@item.HeadLine</h2></a>
+        <a href="@item.Channel.WebURL" target="_blank">@item.Channel.Name</a> | @DateTimeExt.ToLovelyTime(item.PublishedDate)
+    </div>  
+}
