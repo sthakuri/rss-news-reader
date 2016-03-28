@@ -1,13 +1,11 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Net;
 using System.Xml;
-using NewsFeed.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using NewsFeed.Extension;
-using System.Threading.Tasks;
+using NewsFeed.Model;
 
 namespace NewsFeed.Channel
 {
@@ -22,16 +20,16 @@ namespace NewsFeed.Channel
 
         public virtual List<FeedItem> Fetch()
         {
-            List<FeedItem> items = new List<FeedItem>();
-            XmlDocument rssXmlDoc = new XmlDocument();
+            var items = new List<FeedItem>();
+            var rssXmlDoc = new XmlDocument();
             try
             {
                 try
                 {
-                    WebClient wc = new WebClient();
-                    Stream st = wc.OpenRead(this.FeedURL);
+                    var wc = new WebClient();
+                    Stream st = wc.OpenRead(FeedURL);
                     string rss = "";
-                    using (StreamReader sr = new StreamReader(st))
+                    using (var sr = new StreamReader(st))
                     {
                         rss = sr.ReadToEnd();
                     }
@@ -41,7 +39,6 @@ namespace NewsFeed.Channel
                 }
                 catch (Exception ex1)
                 {
-
                 }
                 // Parse the Items in the RSS file
 
@@ -55,13 +52,18 @@ namespace NewsFeed.Channel
                     string description = ReadNodeElement(rssNode, "description");
                     DateTime pubDate = DateTimeExt.ToDateTime(ReadNodeElement(rssNode, "pubDate"));
                     if (pubDate > DateTime.Now.AddDays(-1))
-                        items.Add(new FeedItem() { Channel = this, HeadLine = title, Description = description, Link = link, PublishedDate = pubDate });
+                        items.Add(new FeedItem
+                            {
+                                Channel = this,
+                                HeadLine = title,
+                                Description = description,
+                                Link = link,
+                                PublishedDate = pubDate
+                            });
                 }
-
             }
             catch (Exception ex)
             {
-
             }
             return items.ToList();
         }

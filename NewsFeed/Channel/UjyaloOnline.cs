@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace NewsFeed.Channel
+﻿namespace NewsFeed.Channel
 {
     public class UjyaloOnline : Model.Channel
     {

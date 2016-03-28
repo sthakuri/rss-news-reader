@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace NewsFeed.Channel
+﻿namespace NewsFeed.Channel
 {
-    public class SwasthyaKhabar: Model.Channel
+    public class SwasthyaKhabar : Model.Channel
     {
         public SwasthyaKhabar()
         {

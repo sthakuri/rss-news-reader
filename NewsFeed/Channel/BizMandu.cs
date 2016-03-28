@@ -1,15 +1,13 @@
-﻿using NewsFeed.Extension;
-using NewsFeed.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
 using System.Xml;
+using NewsFeed.Extension;
+using NewsFeed.Model;
 
 namespace NewsFeed.Channel
 {
-    public class BizMandu: Model.Channel
+    public class BizMandu : Model.Channel
     {
         public BizMandu()
         {
@@ -21,12 +19,12 @@ namespace NewsFeed.Channel
         public virtual List<FeedItem> Fetch()
         {
             var items = new List<FeedItem>();
-            XmlDocument rssXmlDoc = new XmlDocument();
+            var rssXmlDoc = new XmlDocument();
             try
             {
                 try
                 {
-                    rssXmlDoc.Load(this.FeedURL);
+                    rssXmlDoc.Load(FeedURL);
                 }
                 catch (Exception ex1)
                 {
@@ -42,7 +40,14 @@ namespace NewsFeed.Channel
                     string description = ReadNodeElement(rssNode, "description");
                     DateTime pubDate = DateTimeExt.ToDateTime(ReadNodeElement(rssNode, "pubDate"));
 
-                    items.Add(new FeedItem() { Channel = this, HeadLine = title, Description = description, Link = link, PublishedDate = pubDate });
+                    items.Add(new FeedItem
+                        {
+                            Channel = this,
+                            HeadLine = title,
+                            Description = description,
+                            Link = link,
+                            PublishedDate = pubDate
+                        });
                 }
             }
             catch (Exception ex)

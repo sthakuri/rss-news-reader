@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Web;
 
 namespace NewsFeed.Extension
 {
@@ -11,10 +8,18 @@ namespace NewsFeed.Extension
         public static bool IsURLActive(string url)
         {
             WebRequest request = WebRequest.Create(url);
+            request.Timeout = 1000;
             bool chk = false;
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            try
             {
-                chk = (response != null && response.StatusCode == HttpStatusCode.OK);
+                using (var response = (HttpWebResponse) request.GetResponse())
+                {
+                    chk = (response != null && response.StatusCode == HttpStatusCode.OK);
+                }
+            }
+            catch (Exception)
+            {
+                chk = false;
             }
             return chk;
         }

@@ -1,10 +1,6 @@
-﻿using NewsFeed.Channel;
+﻿using System.Web.Mvc;
+using NewsFeed.Channel;
 using NewsFeed.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 
 namespace NewsFeed.Controllers
 {
@@ -12,7 +8,7 @@ namespace NewsFeed.Controllers
     {
         public ActionResult Index()
         {
-            ViewModel model = new ViewModel();
+            var model = new ViewModel();
             model.Add(new BBCNepali());
             model.Add(new BizMandu());
             model.Add(new Google());
@@ -27,7 +23,7 @@ namespace NewsFeed.Controllers
             model.Add(new SwasthyaKhabar());
             model.Add(new AakarPost());
             model.Add(new NayaPatrika());
-            
+
             return View(model);
         }
     }

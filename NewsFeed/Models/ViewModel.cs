@@ -1,18 +1,17 @@
-﻿using NewsFeed.Extension;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NewsFeed.Extension;
 
 namespace NewsFeed.Model
 {
     public class ViewModel
     {
-        List<Channel> channels;
+        private readonly List<Channel> channels;
 
+        private readonly List<FeedItem> items;
         private List<FeedItem> topItems;
-        List<FeedItem> items;
 
         public ViewModel()
         {
@@ -33,12 +32,6 @@ namespace NewsFeed.Model
             return channels[index];
         }
 
-        public List<FeedItem> TopFeeds()
-        {
-            //Parallel.ForEach(channels, c => { topItems.AddRange(c.Fetch()); });
-            return items.OrderByDescending(x => x.PublishedDate).Take(5).ToList();
-        }
-
         public List<FeedItem> Feeds()
         {
             Parallel.ForEach(channels, c => { if (ePailaExt.IsURLActive(c.FeedURL)) items.AddRange(c.Fetch()); });
@@ -47,18 +40,16 @@ namespace NewsFeed.Model
 
         public override string ToString()
         {
-            StringBuilder bld = new StringBuilder();
-            foreach (var item in items)
+            var bld = new StringBuilder();
+            foreach (FeedItem item in items)
             {
                 bld.Append("####################################");
                 bld.AppendLine();
-                bld.Append(item.ToString());
+                bld.Append(item);
                 bld.AppendLine();
                 bld.Append("####################################");
             }
             return bld.ToString();
         }
-
-
     }
 }

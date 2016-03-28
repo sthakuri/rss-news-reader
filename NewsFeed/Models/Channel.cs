@@ -1,34 +1,27 @@
-﻿using NewsFeed.Extension;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Xml;
+using NewsFeed.Extension;
+using NewsFeed.Interface;
 
 namespace NewsFeed.Model
 {
-    public class Channel : Interface.IChannel
+    public class Channel : IChannel
     {
         public string Name { get; set; }
         public string WebURL { get; set; }
         public string FeedURL { get; set; }
 
-        protected string ReadNodeElement(XmlNode rssNode, string element)
-        {
-            XmlNode rssSubNode = rssNode.SelectSingleNode(element);
-            return rssSubNode != null ? rssSubNode.InnerText : "";
-        }
-
         public virtual List<FeedItem> Fetch()
         {
             var items = new List<FeedItem>();
-            XmlDocument rssXmlDoc = new XmlDocument();
+            var rssXmlDoc = new XmlDocument();
             try
             {
                 try
                 {
-                    rssXmlDoc.Load(this.FeedURL);
+                    rssXmlDoc.Load(FeedURL);
                 }
                 catch (Exception ex1)
                 {
@@ -45,7 +38,14 @@ namespace NewsFeed.Model
                     string description = ReadNodeElement(rssNode, "description");
                     DateTime pubDate = DateTimeExt.ToDateTime(ReadNodeElement(rssNode, "pubDate"));
                     if (pubDate > DateTime.Now.AddDays(-1))
-                        items.Add(new FeedItem() { Channel = this, HeadLine = title, Description = description, Link = link, PublishedDate = pubDate });
+                        items.Add(new FeedItem
+                            {
+                                Channel = this,
+                                HeadLine = title,
+                                Description = description,
+                                Link = link,
+                                PublishedDate = pubDate
+                            });
                 }
             }
             catch (Exception ex)
@@ -54,6 +54,10 @@ namespace NewsFeed.Model
             return items.ToList();
         }
 
-
+        protected string ReadNodeElement(XmlNode rssNode, string element)
+        {
+            XmlNode rssSubNode = rssNode.SelectSingleNode(element);
+            return rssSubNode != null ? rssSubNode.InnerText : "";
+        }
     }
 }

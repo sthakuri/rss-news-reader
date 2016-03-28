@@ -1,14 +1,6 @@
-﻿using NewsFeed.Interface;
-using NewsFeed.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NewsFeed.Channel
+﻿namespace NewsFeed.Channel
 {
-    class OnlineKhabar : Model.Channel
+    internal class OnlineKhabar : Model.Channel
     {
         public OnlineKhabar()
         {

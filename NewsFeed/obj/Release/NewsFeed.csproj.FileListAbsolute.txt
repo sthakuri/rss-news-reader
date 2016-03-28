@@ -11,3 +11,12 @@ C:\CodeFun\NewsFeed\bin\System.Web.WebPages.Razor.xml
 C:\CodeFun\NewsFeed\obj\Release\NewsFeed.dll
 C:\CodeFun\NewsFeed\obj\Release\NewsFeed.pdb
 C:\CodeFun\NewsFeed\obj\Release\NewsFeed.csprojResolveAssemblyReference.cache
+C:\CodeFun\rss-news-reader\NewsFeed\bin\NewsFeed.dll
+C:\CodeFun\rss-news-reader\NewsFeed\bin\NewsFeed.pdb
+C:\CodeFun\rss-news-reader\NewsFeed\bin\System.Web.WebPages.dll
+C:\CodeFun\rss-news-reader\NewsFeed\bin\System.Web.WebPages.Razor.dll
+C:\CodeFun\rss-news-reader\NewsFeed\bin\System.Web.WebPages.xml
+C:\CodeFun\rss-news-reader\NewsFeed\bin\System.Web.WebPages.Razor.xml
+C:\CodeFun\rss-news-reader\NewsFeed\obj\Release\NewsFeed.csprojResolveAssemblyReference.cache
+C:\CodeFun\rss-news-reader\NewsFeed\obj\Release\NewsFeed.dll
+C:\CodeFun\rss-news-reader\NewsFeed\obj\Release\NewsFeed.pdb
