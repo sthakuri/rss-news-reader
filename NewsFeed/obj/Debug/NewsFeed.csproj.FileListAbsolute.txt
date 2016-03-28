@@ -10,11 +10,3 @@ C:\CodeFun\NewsFeed\bin\System.Web.WebPages.xml
 C:\CodeFun\NewsFeed\bin\System.Web.WebPages.Razor.xml
 C:\CodeFun\NewsFeed\obj\Debug\NewsFeed.dll
 C:\CodeFun\NewsFeed\obj\Debug\NewsFeed.pdb
-C:\CodeFun\rss-news-reader\NewsFeed\bin\NewsFeed.dll
-C:\CodeFun\rss-news-reader\NewsFeed\bin\NewsFeed.pdb
-C:\CodeFun\rss-news-reader\NewsFeed\bin\System.Web.WebPages.dll
-C:\CodeFun\rss-news-reader\NewsFeed\bin\System.Web.WebPages.Razor.dll
-C:\CodeFun\rss-news-reader\NewsFeed\bin\System.Web.WebPages.xml
-C:\CodeFun\rss-news-reader\NewsFeed\bin\System.Web.WebPages.Razor.xml
-C:\CodeFun\rss-news-reader\NewsFeed\obj\Debug\NewsFeed.dll
-C:\CodeFun\rss-news-reader\NewsFeed\obj\Debug\NewsFeed.pdb
