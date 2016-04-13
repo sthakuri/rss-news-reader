@@ -1,45 +1,76 @@
-.items {
-    display: flex;
-    flex-wrap: wrap;
-    font: 13px/22px Helvetica, Arial, sans-serif;
-    margin-left: -10px;
-    margin-top: -10px;
+body {
+    background: url("../images/bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-.items .item {
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    background: #E0DDE0;
+#header {
+    position: fixed;
+    top: 0px;
+    height: 25px;
+    width: 100%;
+    background: #EEE;
     border-radius: 10px;
     box-shadow: 3px 3px 7px #777;
     box-sizing: border-box;
     color: #171e42;
     flex: 1 0 300px;
-    font-size: 12px;
-    margin-left: 10px;
-    margin-top: 10px;
+    font-size: 14px;
     padding: 10px;
 }
 
-.items .item:hover { background: rgb(187, 180, 180); }
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    font: 13px/22px Helvetica, Arial, sans-serif;
+    margin-left: -10px;
+    margin-top: 20px;
+}
+
+    .items .item {
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 7px #777;
+        box-sizing: border-box;
+        color: #b2b2b2;
+        flex: 1 0 300px;
+        font-size: 12px;
+        margin-left: 10px;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+        .items .item:hover {
+            background: rgb(187, 180, 180);
+            color: black;
+        }
 /* unvisited link */
 
 a:link {
-    color: green;
+    color: rgb(148, 156, 147);
     text-decoration: none;
 }
 
 /* visited link */
 
-a:visited { color: green; }
+a:visited {
+    color: rgb(169, 168, 174);
+}
 
 /* mouse over link */
 
-a:hover { color: red; }
+a:hover {
+    color: black;
+}
 
 /* selected link */
 
-a:active { color: yellow; }
+a:active {
+    color: yellow;
+}
 
 
 #overlayedFrameFooter {
