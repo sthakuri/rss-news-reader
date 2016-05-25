@@ -1,32 +1,8 @@
-body {
-    background: url("../images/bg.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-#header {
-    position: fixed;
-    top: 0px;
-    height: 25px;
-    width: 100%;
-    background: #EEE;
-    border-radius: 10px;
-    box-shadow: 3px 3px 7px #777;
-    box-sizing: border-box;
-    color: #171e42;
-    flex: 1 0 300px;
-    font-size: 14px;
-    padding: 10px;
-}
-
 .items {
     display: flex;
     flex-wrap: wrap;
     font: 13px/22px Helvetica, Arial, sans-serif;
     margin-left: -10px;
-    margin-top: 20px;
 }
 
     .items .item {
@@ -41,6 +17,7 @@ body {
         margin-left: 10px;
         margin-top: 10px;
         padding: 10px;
+        background-color: #e7e7e7;
     }
 
         .items .item:hover {
@@ -50,7 +27,7 @@ body {
 /* unvisited link */
 
 a:link {
-    color: rgb(148, 156, 147);
+    color: rgb(182, 120, 49);
     text-decoration: none;
 }
 
@@ -63,7 +40,7 @@ a:visited {
 /* mouse over link */
 
 a:hover {
-    color: black;
+    color: rgb(160, 128, 128);
 }
 
 /* selected link */
